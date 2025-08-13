@@ -1,1 +1,1 @@
-# lesson-template
+# ruby-basics
