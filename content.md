@@ -22,7 +22,7 @@ pp("hello, world")
 {: .repl }
 
 <aside class="tip">
-  Try using the other print methods (<pre>puts</pre>, <pre>print</pre>, and <pre>p</pre>). Do you notice a difference in the output?
+  Try using the other print methods (<code>puts</code>, <code>print</code>, and <code>p</code>). Do you notice a difference in the output?
 </aside>
 
 ## 2. Understanding the Syntax
