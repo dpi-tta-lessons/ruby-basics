@@ -27,6 +27,8 @@ pp("hello, world")
 
 ## 2. Understanding the Syntax
 
+<!-- TODO: add diagram breaking this down -->
+
 Let's break down what's happening when we run `pp("hello, world")`:
 
 - `pp` is a *method* (a "message" you send to an object).
@@ -57,7 +59,7 @@ You'll learn more about `self` later, but for now just know:
 - Inside the top level of your program, `self` is the `main` object.
 
 <aside class="tip">
-  Later, when you're inside your own classes, <pre>self</pre> will mean "this particular object," and Ruby will still fill it in automatically when you don't write it.
+  Later, when you're inside your own classes, <code>self</code> will mean "this particular object," and Ruby will still fill it in automatically when you don't write it.
 </aside>
 
 ### Parentheses: Optional but Helpful
@@ -219,10 +221,6 @@ Save your code in a file and run `ruby my_file.rb`.
 ### Interactive Ruby
 
 Open an interactive Ruby console by running the terminal command `irb`. IRB is great for quick experiments.
-
-## Interactive Ruby (irb)
-
-`irb` to start a ruby 'repl'
 
 ## 9. Reading Documentation
 
