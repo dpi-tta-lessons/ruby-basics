@@ -70,7 +70,7 @@ In Ruby, parentheses can often be omitted when calling methods. For example:
 
 *Without* parentheses the code reads as a more natural and "sentence-like" style. *With* parentheses is a more standard approach across different programming languages.
 
-<!-- TODO: show, don't tell -->
+<!-- TODO: show, don't tell. use repl with nested method calls -->
 <aside class="warning">
   <strong>Warning:</strong> Omitting parentheses can sometimes confuse Ruby about which arguments belong to which method. Parenthese are preferred when passing multiple arguments or to make order of operations clear.
 </aside>
