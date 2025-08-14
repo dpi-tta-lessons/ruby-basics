@@ -47,21 +47,6 @@ For example, in a call like self.pp("hello, world"), the object self is the rece
 
 -->
 
-### When `self` is Implied
-
-In Ruby, when you call a method at the top level (like `pp("hello, world")`), Ruby quietly assumes you mean `self.pp("hello, world")`
-
-You don't see the `self.` part because Ruby adds it for you. This is called an *implicit receiver*, the "thing" that's running your code (the `main` object) is understood without you having to type it.
-
-You'll learn more about `self` later, but for now just know:
-
-- If you don't write a receiver, Ruby uses `self` automatically.
-- Inside the top level of your program, `self` is the `main` object.
-
-<aside class="tip">
-  Later, when you're inside your own classes, <code>self</code> will mean "this particular object," and Ruby will still fill it in automatically when you don't write it.
-</aside>
-
 ### Parentheses: Optional but Helpful
 
 In Ruby, parentheses are optional. For example:
@@ -204,6 +189,21 @@ pp self
 {: .repl }
 
 This will show you the `main` object Ruby is starting in. You don't have to fully understand `self` yet, just know it's Ruby's way of saying "me, the thing currently running this code." Later, when you create your own objects, <code>self</code> will point to those objects instead of the main object.
+
+### When `self` is Implied
+
+In Ruby, when you call a method at the top level (like `pp("hello, world")`), Ruby quietly assumes you mean `self.pp("hello, world")`
+
+You don't see the `self.` part because Ruby adds it for you. This is called an *implicit receiver*, the "thing" that's running your code (the `main` object) is understood without you having to type it.
+
+You'll learn more about `self` later, but for now just know:
+
+- If you don't write a receiver, Ruby uses `self` automatically.
+- Inside the top level of your program, `self` is the `main` object.
+
+<aside class="tip">
+  Later, when you're inside your own classes, <code>self</code> will mean "this particular object," and Ruby will still fill it in automatically when you don't write it.
+</aside>
 
 ## 8. How to run Ruby
 
