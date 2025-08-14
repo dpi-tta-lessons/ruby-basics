@@ -31,9 +31,9 @@ pp("hello, world")
 
 Let's break down what's happening when we run `pp("hello, world")`:
 
-- `pp` is a *method* (a "message" you send to an object).
-- `self` is the *receiver* of the `pp` message. (You could even write it as `self.pp("hello, world")`)
-- `"hello, world"` is a string, your method's argument.
+- `pp` is a *method* (a *message* you send to an object).
+- `self` is the *receiver* of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
+- `"hello, world"` is a string, your method's *argument*.
 
 <!-- 
 
@@ -64,15 +64,14 @@ You'll learn more about `self` later, but for now just know:
 
 ### Parentheses: Optional but Helpful
 
-In Ruby, parentheses can often be omitted when calling methods. For example:
+In Ruby, parentheses are optional. For example:
 
 `pp "hello"` is the same as `pp("hello")`
 
-*Without* parentheses the code reads as a more natural and "sentence-like" style. *With* parentheses is a more standard approach across different programming languages.
-
 <!-- TODO: show, don't tell. use repl with nested method calls -->
-<aside class="warning">
-  <strong>Warning:</strong> Omitting parentheses can sometimes confuse Ruby about which arguments belong to which method. Parenthese are preferred when passing multiple arguments or to make order of operations clear.
+
+<aside class="tip">
+  Without parentheses the code reads as a more natural and "sentence-like" style. With parentheses is a more standard approach across different programming languages.
 </aside>
 
 ### Casing Rules in Ruby
@@ -80,17 +79,84 @@ In Ruby, parentheses can often be omitted when calling methods. For example:
 Ruby cares about letter case.
 
 ```
-method_names → lowercase with underscores "snake_case"
+method_names   → lowercase with underscores "snake_case"
 variable_names → lowercase with underscores "snake_case"
-ClassNames → CapitalizedCamelCase 
-CONSTANTS → ALL_CAPS
+ClassNames     → CapitalizedCamelCase 
+CONSTANTS      → ALL_CAPS
 ```
 
 Try to be consistent with casing in your code and filenames.
 
-<!-- NOTE: parentheses optional in ruby -->
+## 3. Variables
 
-## 3. Everything is an Object
+Remember Algebra? `100 = x + 50, Find x` Ruby has variables too. We can store any data type in a variable. Let's update our hello world program to use a variable.
+
+```ruby
+greeting = "hello, world"
+pp(greeting)
+```
+{: .repl }
+
+Instead of retyping the string, you store it in the `greeting` variable and print it whenever you like.
+
+<aside class="tip">
+  We can be more descriptive in naming variables than just x, y, z, etc. One of the hardest things about programming is naming things well. I encourage you to be verbose and descriptive when naming things. This will make it easier to understand.
+</aside>
+
+## 4. Error Messages
+
+Let's try to break things. Run this repl calling the `kaboom!` method.
+
+```ruby
+kaboom!
+```
+{: .repl }
+
+Looks like we've triggered our first *error message*, `-e:1:in '<main>': undefined local variable or method 'kaboom!' for main (NameError)`. Let's break it down step-by-step:
+
+1. `-e:1`: Ruby is telling you the location of the problem. `-e` means this code was run directly from the command line (or a quick REPL test) `:1` means the problem is on line 1.
+2. `in '<main>'`: This means the error happened in the "main" part of your program, the top level before you're inside any class or method.
+3. `undefined local variable or method 'kaboom'`: Ruby looked for something called `kaboom` and couldn't find it as either a local variable (like my_name) or a method (like puts)
+4. `for main`: Ruby was trying to run this code as part of the main object, the default object Ruby starts in.
+5. `(NameError)`: This is the type of error: a `NameError` means Ruby doesn't recognize the name you gave it.
+
+Error messages are your friend. Please read the error message! Seriously, **read the error message**. They will often provide context clues like line numbers and even suggest changes to make it work.
+
+<!-- TODO: add screenshot/video showing shortcut to click to the location in your code -->
+
+## 5. Code Comments
+
+Comments are ignored by Ruby but are essential for explaining your code.
+
+```ruby
+# NOTE: This prints a friendly message
+pp "hello, world"
+```
+{: .repl }
+
+I encourage you to use comments to document your code and provide context.
+
+<aside class="tip">
+  On many editors (including VSCode), <pre>⌘ + /</pre> toggles comments.
+</aside>
+
+## 6. Data Types
+
+<!-- String, Integer, Numeric, Array, Hash -->
+Ruby's common data types include:
+
+```ruby
+"text"     # String
+42         # Integer
+3.14       # Float
+[1, 2, 3]  # Array
+{a: 1}     # Hash
+```
+{: .repl }
+
+You'll use these to store and manipulate different kinds of information. We'll cover these in more detail in future lessons.
+
+## 7. Everything is an Object
 
 In Ruby, *everything is an object*.
 
@@ -120,7 +186,7 @@ Resulting in `"HELLO"`
 Even numbers are objects:
 
 ```ruby
-5.next  # tells the number 5 to give you the next number
+pp(5.next)  # tells the number 5 to give you the next number
 ```
 {: .repl }
 
@@ -138,75 +204,6 @@ pp self
 {: .repl }
 
 This will show you the `main` object Ruby is starting in. You don't have to fully understand `self` yet, just know it's Ruby's way of saying "me, the thing currently running this code." Later, when you create your own objects, <code>self</code> will point to those objects instead of the main object.
-
-## 4. Variables
-
-Remember Algebra? `100 = x + 50, Find x` Ruby has variables too. We can store any data type in a variable. Let's update our hello world program to use a variable.
-
-```ruby
-greeting = "hello, world"
-pp(greeting)
-```
-{: .repl }
-
-Instead of retyping the string, you store it in the `greeting` variable and print it whenever you like.
-
-<aside class="tip">
-  We can be more descriptive in naming variables than just x, y, z, etc. One of the hardest things about programming is naming things well. I encourage you to be verbose and descriptive when naming things. This will make it easier to understand.
-</aside>
-
-## 5. Error Messages
-
-Let's try to break things. Run this repl calling the `kaboom!` method.
-
-```ruby
-kaboom!
-```
-{: .repl }
-
-Looks like we've triggered our first *error message*, `-e:1:in '<main>': undefined local variable or method 'kaboom!' for main (NameError)`. Let's break it down step-by-step:
-
-1. `-e:1`: Ruby is telling you the location of the problem. `-e` means this code was run directly from the command line (or a quick REPL test) `:1` means the problem is on line 1.
-2. `in '<main>'`: This means the error happened in the "main" part of your program, the top level before you're inside any class or method.
-3. `undefined local variable or method 'kaboom'`: Ruby looked for something called `kaboom` and couldn't find it as either a local variable (like my_name) or a method (like puts)
-4. `for main`: Ruby was trying to run this code as part of the main object, the default object Ruby starts in.
-5. `(NameError)`: This is the type of error: a `NameError` means Ruby doesn't recognize the name you gave it.
-
-Error messages are your friend. Please read the error message! Seriously, **read the error message**. They will often provide context clues like line numbers and even suggest changes to make it work.
-
-<!-- TODO: add screenshot/video showing shortcut to click to the location in your code -->
-
-## 6. Code Comments
-
-Comments are ignored by Ruby but are essential for explaining your code.
-
-```ruby
-# NOTE: This prints a friendly message
-pp "hello, world"
-```
-{: .repl }
-
-I encourage you to use comments to document your code and provide context.
-
-<aside class="tip">
-  On many editors (including VSCode), <pre>⌘ + /</pre> toggles comments.
-</aside>
-
-## 7. Data Types
-
-<!-- String, Integer, Numeric, Array, Hash -->
-Ruby's common data types include:
-
-```ruby
-"text"     # String
-42         # Integer
-3.14       # Float
-[1, 2, 3]  # Array
-{a: 1}     # Hash
-```
-{: .repl }
-
-You'll use these to store and manipulate different kinds of information. We'll cover these in more detail in future lessons.
 
 ## 8. How to run Ruby
 
