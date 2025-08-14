@@ -101,12 +101,12 @@ Each object:
 - Has attributes associated with it (a phone has a color, a cat has a name)
 - Can do actions (a phone can ring, a cat can meow)
 
-In Ruby, things like numbers, words, and even pieces of code are all objects with their own actions (called methods) and properties.
+In Ruby, things like numbers, words, and even pieces of code are all objects with their own actions (called methods) and attributes.
 
 For example:
 
 ```ruby
-"hello".upcase
+pp("hello".upcase)
 ```
 {: .repl }
 
