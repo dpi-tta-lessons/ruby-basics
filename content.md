@@ -131,11 +131,11 @@ I encourage you to use comments to document your code and provide context.
 Ruby's common data types include:
 
 ```ruby
-"text"     # String
-42         # Integer
-3.14       # Float
-[1, 2, 3]  # Array
-{a: 1}     # Hash
+pp "text".class               # String
+pp 42.class                   # Integer
+pp 3.14.class                 # Float
+pp [1, 2, 3].class            # Array
+pp { "a" => 1 }.class         # Hash
 ```
 {: .repl }
 
