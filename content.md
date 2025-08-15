@@ -149,7 +149,7 @@ You'll use these data types to store and manipulate different kinds of informati
 
 In Ruby, *everything is an object*.
 
-What is an object? Think of an object like a thing in the real world: a phone, a cat, or a sandwich.
+What is an object? Think of an object like a thing in the real world: a phone, a cat, a sandwich, etc.
 
 Each object:
 
@@ -158,11 +158,13 @@ Each object:
 
 ### My Cat Turkey
 
-This is my cat Turkey.
+This is my pet cat Turkey.
 
 ![my cat Turkey](assets/turkey-cat.png)
 
-There are many other cats.
+There are many other cats like him, but he is *my* pet cat.
+
+![group of cats](assets/group-of-cats.png)
 
 There are characteristics that all cats share. All cats:
 
@@ -170,6 +172,7 @@ There are characteristics that all cats share. All cats:
 - have a birthday
 - can meow
 - can purr
+- etc.
 
 Each cat has their own unique values for these characteristics:
 
@@ -178,8 +181,6 @@ Each cat has their own unique values for these characteristics:
 - fur color
 - personality
 - etc.
-
-![group of cats](assets/group-of-cats.png)
 
 In Ruby we can write a blueprint for a cat using a *class*. We'll use that class to create a cat object (an *instance* of `Cat` class).
 
@@ -202,7 +203,7 @@ class Cat
   end
 end
 
-# my_cat is a Cat object
+# my_cat is an instance of Cat (a cat object)
 my_cat = Cat.new("Turkey", "ginger")
 
 # We call the methods meow and purr on the cat object
@@ -212,8 +213,6 @@ my_cat.purr
 {: .repl }
 
 In Ruby, things like numbers and words are all objects with their own actions (called methods) and attributes.
-
-For example:
 
 ```ruby
 pp("hello".upcase)
@@ -229,13 +228,12 @@ Resulting in `"HELLO"`
 
 Even numbers are objects.
 
-<!-- TODO: maybe use 5.odd? or 5.even? -->
 ```ruby
 pp(5.next)  # tells the number 5 to give you the next number
 ```
 {: .repl }
 
-In this example, `5` is an instance of the `Integer` class. Try calling the method `odd?` on `5`. What do you expect it to return?
+In this example, `5` is an instance of the `Integer` class. Try calling the methods `odd?` and `even?` on `5`. What do you expect it to return?
 
 ### The "Main Object" and `self`
 
