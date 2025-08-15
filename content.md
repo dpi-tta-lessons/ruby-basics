@@ -25,54 +25,9 @@ pp("hello, world")
   Try using the other print methods (<code>puts</code>, <code>print</code>, and <code>p</code>). Do you notice a difference in the output?
 </aside>
 
-## 2. Understanding the Syntax
+## 2. Variables
 
-<!-- TODO: add diagram breaking this down -->
-
-Let's break down what's happening when we run `pp("hello, world")`:
-
-- `pp` is a *method* (a *message* you send to an object).
-- `self` is the *receiver* of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
-- `"hello, world"` is a string, your method's *argument*.
-
-<!-- 
-
-https://stackoverflow.com/questions/45474802/could-you-explain-sender-and-receiver-in-oop-and-give-examples
-
-https://stackoverflow.com/questions/15592268/how-to-understand-sender-and-receiver-in-ruby
-
-arguments, parameters, method (message), receiver 
-
-For example, in a call like self.pp("hello, world"), the object self is the receiver of the pp message with "hello, world" being the argument.
-
--->
-
-### Parentheses: Optional but Helpful
-
-In Ruby, parentheses are optional. For example:
-
-`pp "hello"` is the same as `pp("hello")`
-
-<!-- TODO: show, don't tell. use repl with nested method calls -->
-
-<aside class="tip">
-  Without parentheses the code reads as a more natural and "sentence-like" style. With parentheses is a more standard approach across different programming languages.
-</aside>
-
-### Casing Rules in Ruby
-
-Ruby cares about letter case.
-
-```
-method_names   → lowercase with underscores "snake_case"
-variable_names → lowercase with underscores "snake_case"
-ClassNames     → CapitalizedCamelCase 
-CONSTANTS      → ALL_CAPS
-```
-
-Try to be consistent with casing in your code and filenames.
-
-## 3. Variables
+<!-- TODO: explain how to assign variables using `=` -->
 
 Remember Algebra? `100 = x + 50, Find x` Ruby has variables too. We can store any data type in a variable. Let's update our hello world program to use a variable.
 
@@ -88,7 +43,7 @@ Instead of retyping the string, you store it in the `greeting` variable and prin
   We can be more descriptive in naming variables than just x, y, z, etc. One of the hardest things about programming is naming things well. I encourage you to be verbose and descriptive when naming things. This will make it easier to understand.
 </aside>
 
-## 4. Error Messages
+## 3. Error Messages
 
 Let's try to break things. Run this repl calling the `kaboom!` method.
 
@@ -109,9 +64,9 @@ Error messages are your friend. Please read the error message! Seriously, **read
 
 <!-- TODO: add screenshot/video showing shortcut to click to the location in your code -->
 
-## 5. Code Comments
+## 4. Code Comments
 
-Comments are ignored by Ruby but are essential for explaining your code.
+You can write comments using `#` in Ruby. Comments are ignored by Ruby but are essential for explaining your code.
 
 ```ruby
 # NOTE: This prints a friendly message
@@ -121,38 +76,142 @@ pp "hello, world"
 
 I encourage you to use comments to document your code and provide context.
 
+<!-- TODO: add video/screenshot -->
 <aside class="tip">
   On many editors (including VSCode), <pre>⌘ + /</pre> toggles comments.
 </aside>
 
-## 6. Data Types
+## 5. Data Types
 
-<!-- String, Integer, Numeric, Array, Hash -->
 Ruby's common data types include:
 
+### String
+
 ```ruby
-pp "text".class               # String
-pp 42.class                   # Integer
-pp 3.14.class                 # Float
-pp [1, 2, 3].class            # Array
-pp { "a" => 1 }.class         # Hash
+pp "this is a string of text"
+```
+
+### Number
+
+```ruby
+pp 100   # Integer
+pp 1.1   # Float
+```
+
+### Symbol
+
+```ruby
+pp :symbol
+```
+
+### Boolean
+
+```ruby
+pp true  # and false
+```
+
+### Date
+
+```ruby
+require "date"
+
+pp Date.today
+```
+
+### Array
+
+```ruby
+pp [1, 2, 3, 4, 5]
+```
+
+### Hash
+
+```ruby
+pp { "a" => 1, "b" => 2, "c" => 3 }
+```
+
+### `class` method
+
+You can check an objects data type using the `class` method.
+
+```ruby
+pp "text".class
 ```
 {: .repl }
 
-You'll use these to store and manipulate different kinds of information. We'll cover these in more detail in future lessons.
+<aside class="tip">
+  Try calling the <code>.class</code> method on other data types.
+</aside>
 
-## 7. Everything is an Object
+You'll use these data types to store and manipulate different kinds of information. We'll cover these data types in more detail in future lessons.
+
+## 6. Everything is an Object
 
 In Ruby, *everything is an object*.
 
-Think of an object like a thing in the real world: a phone, a cat, or a sandwich.
+What is an object? Think of an object like a thing in the real world: a phone, a cat, or a sandwich.
 
 Each object:
 
 - Has attributes associated with it (a phone has a color, a cat has a name)
 - Can do actions (a phone can ring, a cat can meow)
 
-In Ruby, things like numbers, words, and even pieces of code are all objects with their own actions (called methods) and attributes.
+### My Cat Turkey
+
+This is my cat Turkey.
+
+![my cat Turkey](assets/turkey-cat.png)
+
+There are many other cats.
+
+There are characteristics that all cats share. All cats:
+
+- have a name
+- have a birthday
+- can meow
+- can purr
+
+Each cat has their own unique values for these characteristics:
+
+- name
+- birthday
+- fur color
+- personality
+- etc.
+
+![group of cats](assets/group-of-cats.png)
+
+In Ruby we can write a blueprint for a cat using a *class*. We'll use that class to create a cat object (an *instance* of `Cat` class).
+
+```ruby
+# Cat class
+class Cat
+  attr_accessor :name, :color
+
+  def initialize(name, color)
+    @name = name
+    @color = color
+  end
+
+  def meow
+    puts "#{@name} says: Meow!"
+  end
+
+  def purr
+    puts "#{@name} is purring..."
+  end
+end
+
+# my_cat is a Cat object
+my_cat = Cat.new("Turkey", "ginger")
+
+# We call the methods meow and purr on the cat object
+my_cat.meow
+my_cat.purr
+```
+{: .repl }
+
+In Ruby, things like numbers and words are all objects with their own actions (called methods) and attributes.
 
 For example:
 
@@ -163,21 +222,26 @@ pp("hello".upcase)
 
 In this example:
 
-`"hello"` is an object (a string)
+`"hello"` is an object (of class String)
 `.upcase` is a method (an action the object can perform)
 
 Resulting in `"HELLO"`
 
-Even numbers are objects:
+Even numbers are objects.
 
+<!-- TODO: maybe use 5.odd? or 5.even? -->
 ```ruby
 pp(5.next)  # tells the number 5 to give you the next number
 ```
 {: .repl }
 
+In this example, `5` is an instance of the `Integer` class. Try calling the method `odd?` on `5`. What do you expect it to return?
+
 ### The "Main Object" and `self`
 
-When you start a Ruby program, Ruby is already inside an object behind the scenes, we call it the main object.
+<!-- TODO: add diagrams, this is confusing for beginners -->
+
+When you start a Ruby program, Ruby is already inside an object behind the scenes, we call it the `main` object.
 
 Right now, the program is being run "from inside" that main object. Ruby uses the special word `self` to refer to the object you're currently inside.
 
@@ -188,7 +252,7 @@ pp self
 ```
 {: .repl }
 
-This will show you the `main` object Ruby is starting in. You don't have to fully understand `self` yet, just know it's Ruby's way of saying "me, the thing currently running this code." Later, when you create your own objects, <code>self</code> will point to those objects instead of the main object.
+This will show you the `main` object Ruby is starting in. You don't have to fully understand `self` yet, just know it's Ruby's way of saying "me, the thing currently running this code."
 
 ### When `self` is Implied
 
@@ -201,9 +265,38 @@ You'll learn more about `self` later, but for now just know:
 - If you don't write a receiver, Ruby uses `self` automatically.
 - Inside the top level of your program, `self` is the `main` object.
 
-<aside class="tip">
-  Later, when you're inside your own classes, <code>self</code> will mean "this particular object," and Ruby will still fill it in automatically when you don't write it.
-</aside>
+## 7. Understanding the Syntax
+
+<!-- TODO: add diagram breaking this down -->
+
+Let's break down what's happening when we run `pp("hello, world")`:
+
+- `pp` is a *method* (a *message* you send to an object).
+- `self` is the *receiver* of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
+- `"hello, world"` is a string, your method's *argument*.
+
+<!-- TODO: add diagram -->
+
+## Parentheses: Optional but Helpful
+
+In Ruby, parentheses are optional. For example:
+
+`pp "hello"` is the same as `pp("hello")`
+
+<!-- TODO: show, don't tell. use repl with nested method calls -->
+
+## Casing Rules in Ruby
+
+Ruby cares about letter case.
+
+```
+method_names   → lowercase with underscores "snake_case"
+variable_names → lowercase with underscores "snake_case"
+ClassNames     → CapitalizedCamelCase 
+CONSTANTS      → ALL_CAPS
+```
+
+Try to be consistent with casing in your code and filenames.
 
 ## 8. How to run Ruby
 
@@ -251,3 +344,13 @@ Change your greeting so it includes your name, like: `"hello, Ian!"`. Then, try 
 
 - [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
 - [Ruby Programming Language Documentation](https://docs.ruby-lang.org/)
+
+
+
+<!-- TODO: add note on indenting code -->
+
+
+<!-- TODO: stressed.reverse => "desserts" -->
+
+
+<!-- TODO: add .methods and .respond_to? -->
