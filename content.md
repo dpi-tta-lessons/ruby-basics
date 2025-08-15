@@ -90,6 +90,7 @@ Ruby's common data types include:
 ```ruby
 pp "this is a string of text"
 ```
+{: .repl }
 
 ### Number
 
@@ -97,18 +98,21 @@ pp "this is a string of text"
 pp 100   # Integer
 pp 1.1   # Float
 ```
+{: .repl }
 
 ### Symbol
 
 ```ruby
 pp :symbol
 ```
+{: .repl }
 
 ### Boolean
 
 ```ruby
 pp true  # and false
 ```
+{: .repl }
 
 ### Date
 
@@ -117,18 +121,21 @@ require "date"
 
 pp Date.today
 ```
+{: .repl }
 
 ### Array
 
 ```ruby
 pp [1, 2, 3, 4, 5]
 ```
+{: .repl }
 
 ### Hash
 
 ```ruby
 pp { "a" => 1, "b" => 2, "c" => 3 }
 ```
+{: .repl }
 
 ### `class` method
 
