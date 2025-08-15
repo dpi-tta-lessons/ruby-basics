@@ -10,9 +10,7 @@ In this lesson, you'll write your very first Ruby program, learn how Ruby "think
 
 The only way to learn a new programming language is by writing programs in it. The first program to write is the same for all languages:
 
-Print the words: "hello, world"
-
-[source](https://archive.org/details/c-programming-language-2nd-edition/page/9/mode/1up)
+Print the words: "hello, world" [source](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)
 
 In Ruby, printing output to the console is achieved using several built-in methods: `puts`, `print`, `p`, and `pp`.
 
@@ -38,7 +36,9 @@ pp("hello, world")
 
 <!-- TODO: explain how to assign variables using `=` -->
 
-Remember Algebra? `100 = x + 50, Find x` Ruby has variables too. We can store any data type in a variable. Let's update our hello world program to use a variable.
+Remember finding the value of a variables in Algebra? `100 = x + 50, Find x`
+
+Ruby has variables too. We can store data in a variable using `=`. Let's update our hello world program to use a variable.
 
 ```ruby
 greeting = "hello, world"
@@ -63,15 +63,18 @@ kaboom!
 
 Looks like we've triggered our first *error message*, `-e:1:in '<main>': undefined local variable or method 'kaboom!' for main (NameError)`. Let's break it down step-by-step:
 
-1. `-e:1`: Ruby is telling you the location of the problem. `-e` means this code was run directly from the command line (or a quick REPL test) `:1` means the problem is on line 1.
+1. `-e:1`: Ruby is telling you the location of the problem. `-e` means this code was run directly from the command line. `:1` means the problem is on line 1.
 2. `in '<main>'`: This means the error happened in the "main" part of your program, the top level before you're inside any class or method.
-3. `undefined local variable or method 'kaboom'`: Ruby looked for something called `kaboom` and couldn't find it as either a local variable (like my_name) or a method (like puts)
+3. `undefined local variable or method 'kaboom'`: Ruby looked for something called `kaboom` and couldn't find it as either a local variable or a method.
 4. `for main`: Ruby was trying to run this code as part of the main object, the default object Ruby starts in.
-5. `(NameError)`: This is the type of error: a `NameError` means Ruby doesn't recognize the name you gave it.
+5. `(NameError)`: This is the type of error. a `NameError` means Ruby doesn't recognize the name you gave it.
 
 Error messages are your friend. Please read the error message! Seriously, **read the error message**. They will often provide context clues like line numbers and even suggest changes to make it work.
 
-<!-- TODO: add screenshot/video showing shortcut to click to the location in your code -->
+<aside class="tip">
+  You can go directly to the line causing an error by holding <code>⌘</code> and clicking on the file path. This will save you lots of time debugging.
+  <video src="assets/error-open-file-in-editor.mp4" autoplay loop muted playsinline></video>
+</aside>
 
 - In Ruby, what does a `NameError` usually mean?
 - You used a name (variable or method) that hasn’t been defined.
