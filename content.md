@@ -170,17 +170,17 @@ There are characteristics that all cats share. All cats:
 
 - have a name
 - have a birthday
+- have a fur color
+- have a unique personality
 - can meow
 - can purr
-- etc.
 
 Each cat has their own unique values for these characteristics:
 
-- name
-- birthday
-- fur color
-- personality
-- etc.
+- name: "Turkey"
+- birthday: 2016
+- fur color: Ginger
+- personality: "Likes to wake up early and go outside. Very vocal"
 
 In Ruby we can write a blueprint for a cat using a *class*. We'll use that class to create a cat object (an *instance* of `Cat` class).
 
