@@ -213,16 +213,16 @@ my_cat.purr
 In Ruby, things like numbers and words are all objects with their own actions (called methods) and attributes.
 
 ```ruby
-pp("hello".upcase)
+pp("stressed".reverse)
 ```
 {: .repl }
 
 In this example:
 
-`"hello"` is an object (of class String)
-`.upcase` is a method (an action the object can perform)
+`"stressed"` is an object (of class String)
+`.reverse` is a method (an action the object can perform)
 
-Resulting in `"HELLO"`
+Resulting in `"desserts"`
 
 Even numbers are objects.
 
@@ -232,6 +232,11 @@ pp(5.next)  # tells the number 5 to give you the next number
 {: .repl }
 
 In this example, `5` is an instance of the `Integer` class. Try calling the methods `odd?` and `even?` on `5`. What do you expect it to return?
+
+<aside class="tip">
+  <!-- TODO: add screenshot? -->
+  Don't worry about memorizing all the methods. You'll start to pick up common methods as you practice more. As a pro tip, you can call <code>.methods</code> on any Ruby object to get a list of all the methods available. You can also call <code>.respond_to?</code> to see if a specific method exists on an object.
+</aside>
 
 ### The "Main Object" and `self`
 
@@ -263,7 +268,7 @@ You'll learn more about `self` later, but for now just know:
 
 ## 7. Understanding the Syntax
 
-<!-- TODO: add diagram breaking this down -->
+![object oriented syntax breakdown](assets/oop-syntax-breakdown.png)
 
 Let's break down what's happening when we run `pp("hello, world")`:
 
@@ -271,28 +276,29 @@ Let's break down what's happening when we run `pp("hello, world")`:
 - `self` is the *receiver* of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
 - `"hello, world"` is a string, your method's *argument*.
 
-<!-- TODO: add diagram -->
-
 ## Parentheses: Optional but Helpful
 
-In Ruby, parentheses are optional. For example:
-
-`pp "hello"` is the same as `pp("hello")`
-
-<!-- TODO: show, don't tell. use repl with nested method calls -->
+In Ruby, parentheses are optional. For example, `pp "hello"` is the same as `pp("hello")`.
 
 ## Casing Rules in Ruby
 
-Ruby cares about letter case.
+Ruby cares about letter casing. Things like methods, variables, classes and even file names should not have any empty spaces. Some casing you should recognize include:
 
-```
-method_names   → lowercase with underscores "snake_case"
-variable_names → lowercase with underscores "snake_case"
-ClassNames     → CapitalizedCamelCase 
-CONSTANTS      → ALL_CAPS
-```
+### snake_case
 
-Try to be consistent with casing in your code and filenames.
+In Snake case, spaces are replaced with underscores `_`, and the words are typically all lower case. It is used for methods and variables in Ruby. (eg `lowercase_with_underscores`)
+
+### PascalCase
+
+In Pascal case the first letter of each word is capitalized, and there are no spaces or punctuation marks between the words. It is used for `ClassNames`.
+
+### All Caps
+
+Constants are typically defined using all capital letters and underscores `_` for spaces. (eg `MY_CONSTANT`)
+
+### Consistency is Key
+
+In general, recognize and follow established casing patterns and try to be consistent with casing in your code and filenames. This will make your code more readable and less prone to bugs 🐛.
 
 ## 8. How to run Ruby
 
@@ -341,12 +347,5 @@ Change your greeting so it includes your name, like: `"hello, Ian!"`. Then, try 
 - [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
 - [Ruby Programming Language Documentation](https://docs.ruby-lang.org/)
 
-
-
 <!-- TODO: add note on indenting code -->
-
-
-<!-- TODO: stressed.reverse => "desserts" -->
-
-
-<!-- TODO: add .methods and .respond_to? -->
+<!-- TODO: add note on `end`? -->
