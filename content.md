@@ -78,7 +78,7 @@ I encourage you to use comments to document your code and provide context.
 
 <!-- TODO: add video/screenshot -->
 <aside class="tip">
-  On many editors (including VSCode), <pre>⌘ + /</pre> toggles comments.
+  On many editors (including VSCode), <code>⌘ + /</code> toggles comments.
   <video src="assets/toggle-comment.mp4" autoplay loop muted playsinline></video>
 </aside>
 
