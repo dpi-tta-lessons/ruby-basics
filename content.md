@@ -498,3 +498,4 @@ In this lesson, you learned:
 
 - [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
 - [Ruby Programming Language Documentation](https://docs.ruby-lang.org/)
+- [Ruby Style Guide](https://rubystyle.guide/)
