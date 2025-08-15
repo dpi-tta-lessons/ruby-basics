@@ -294,7 +294,7 @@ Ruby cares about letter casing. Things like methods, variables, classes and even
 
 ### snake_case
 
-In Snake case, spaces are replaced with underscores `_`, and the words are typically all lower case. It is used for methods and variables in Ruby. (eg `lowercase_with_underscores`)
+In Snake case, spaces are replaced with underscores `_`, and the words are typically all lower case. It is used for naming methods, variables, files, and folders in Ruby. (eg `lowercase_with_underscores`)
 
 ### PascalCase
 
