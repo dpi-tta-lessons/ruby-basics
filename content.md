@@ -81,7 +81,7 @@ Error messages are your friend. Please read the error message! Seriously, **read
   - Correct! Ruby couldn't find that name in the current scope.
 - You tried to divide by zero.
   - Not correct — that would cause a ZeroDivisionError.
-- Your file is missing the `end` keyword.
+- Your file is missing the end keyword.
   - Not correct — that would cause a SyntaxError.
 {: .choose_best #nameerror title="Understanding NameError" answer="1"}
 
@@ -109,12 +109,16 @@ Ruby's common data types include:
 
 ### String
 
+A sequence of characters, usually used to store text.
+
 ```ruby
 pp "this is a string of text"
 ```
 {: .repl }
 
 ### Number
+
+Represents numeric values, such as integers or floating-point numbers.
 
 ```ruby
 pp 100   # Integer
@@ -124,6 +128,8 @@ pp 1.1   # Float
 
 ### Symbol
 
+An immutable, reusable name or identifier, often used as a lightweight alternative to strings.
+
 ```ruby
 pp :symbol
 ```
@@ -131,12 +137,16 @@ pp :symbol
 
 ### Boolean
 
+Represents a logical value — either true or false.
+
 ```ruby
 pp true  # and false
 ```
 {: .repl }
 
 ### Date
+
+Stores and manipulates calendar dates.
 
 ```ruby
 require "date"
@@ -147,12 +157,16 @@ pp Date.today
 
 ### Array
 
+An ordered collection of values, which can be of any type.
+
 ```ruby
 pp [1, 2, 3, 4, 5]
 ```
 {: .repl }
 
 ### Hash
+
+A collection of key-value pairs.
 
 ```ruby
 pp({ "a" => 1, "b" => 2, "c" => 3 })
@@ -161,7 +175,7 @@ pp({ "a" => 1, "b" => 2, "c" => 3 })
 
 ### `class` method
 
-You can check an objects data type using the `class` method.
+Returns the data type (class) of an object.
 
 ```ruby
 pp "text".class
@@ -200,7 +214,7 @@ This is my pet cat Turkey.
 
 ![my cat Turkey](assets/turkey-cat.png)
 
-There are many other cats like him, but he is *my* pet cat.
+There are many other cats like him, but he is *my* pet cat. There is only one of him.
 
 ![group of cats](assets/group-of-cats.png)
 
@@ -241,7 +255,7 @@ my_cat.meow
 
 `my_cat` is an instance of `Cat` (a cat object). We can call the method `meow` on the cat object.
 
-In Ruby, things like numbers and words are all objects with their own actions (called methods) and attributes.
+In Ruby, things like numbers and strings are all objects with their own actions (called methods) and attributes.
 
 ```ruby
 pp("stressed".reverse)
@@ -250,8 +264,8 @@ pp("stressed".reverse)
 
 In this example:
 
-`"stressed"` is an object (of class String)
-`.reverse` is a method (an action the object can perform)
+`"stressed"` is a `String` object
+`.reverse` is a method (an action the `String` object can perform)
 
 Resulting in `"desserts"`
 
@@ -309,8 +323,8 @@ This will output `syntax error, unexpected end-of-input, expecting end`.
 - What happens if you forget to close a method definition with `end` in Ruby?
 - Ruby will try to guess the missing code.
   - Not correct — Ruby will not guess, it will stop with an error.
-- Ruby will throw a `SyntaxError`.
-  - Correct! Missing `end` causes a syntax error.
+- Ruby will throw a SyntaxError.
+  - Correct! Missing end causes a syntax error.
 - Ruby will skip the method entirely.
   - Not correct — the code will not run past the error.
 {: .choose_best #missing_end title="Forgetting end" answer="2"}
@@ -340,7 +354,7 @@ You don't see the `self.` part because Ruby adds it for you. This is called an *
 
 You'll learn more about `self` later, but for now just know:
 
-- If you don't write a receiver, Ruby uses `self` automatically.
+- If you don't write a receiver object, Ruby uses `self` automatically.
 - Inside the top level of your program, `self` is the `main` object.
 
 ## 9. Understanding the Syntax
@@ -350,7 +364,7 @@ You'll learn more about `self` later, but for now just know:
 Let's break down what's happening when we run `pp("hello, world")`:
 
 - `pp` is a *method* (a *message* you send to an object).
-- `self` is the *receiver* of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
+- `self` is the *receiver* object of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
 - `"hello, world"` is a string, your method's *argument*.
 
 ## 10. Parentheses: Optional but Helpful
@@ -379,16 +393,16 @@ In general, recognize and follow established casing patterns and try to be consi
 
 - Which is a valid Ruby variable name?
 - myName
-  - Not quite — Ruby prefers snake_case for variables.
+  - Not quite. This is an example of camelCase. Ruby prefers snake_case for variables.
 - my_name
   - Correct! Snake case is conventional for variables.
 - MyName
-  - Not quite — This is used for class names in Ruby.
+  - Not quite. This is an example of PascalCase. This is used for class names in Ruby.
 {: .choose_best #var_names title="Ruby Variable Names" answer="2"}
 
 ## 12. Indentation
 
-Ruby does not require indentation to run code, but proper indentation makes your code much easier to read. Most Ruby developers follow the Ruby Style Guide:
+Ruby does not require indentation to run code, but proper indentation makes your code much easier to read. Most Ruby developers follow the [Ruby Style Guide](https://rubystyle.guide/#spaces-indentation):
 
 - Use two spaces for each indentation level (not tabs).
 - Indent consistently inside methods, classes, and loops.
