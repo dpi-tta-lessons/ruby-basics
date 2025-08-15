@@ -185,7 +185,6 @@ Each cat has their own unique values for these characteristics:
 In Ruby we can write a blueprint for a cat using a *class*. We'll use that class to create a cat object (an *instance* of `Cat` class).
 
 ```ruby
-# Cat class
 class Cat
   attr_accessor :name, :color
 
@@ -203,14 +202,13 @@ class Cat
   end
 end
 
-# my_cat is an instance of Cat (a cat object)
 my_cat = Cat.new("Turkey", "ginger")
-
-# We call the methods meow and purr on the cat object
 my_cat.meow
 my_cat.purr
 ```
 {: .repl }
+
+`my_cat` is an instance of `Cat` (a cat object). We can call the methods `meow` and `purr` on the cat object.
 
 In Ruby, things like numbers and words are all objects with their own actions (called methods) and attributes.
 
