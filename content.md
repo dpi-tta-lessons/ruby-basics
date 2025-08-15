@@ -25,6 +25,15 @@ pp("hello, world")
   Try using the other print methods (<code>puts</code>, <code>print</code>, and <code>p</code>). Do you notice a difference in the output?
 </aside>
 
+- What does `pp` do in Ruby? <a href="https://docs.ruby-lang.org/en/master/PP.html">Ruby Docs: class PP</a>
+- It pauses the program.
+  - Not correct. `pp` prints data in a human-readable format.
+- It prints output in a more readable way.
+  - Correct! `pp` pretty-prints objects.
+- It permanently stores variables.
+  - Not correct. `pp` has nothing to do with saving data.
+{: .choose_best #ruby_pp title="Understanding pp" answer="2"}
+
 ## 2. Variables
 
 <!-- TODO: explain how to assign variables using `=` -->
@@ -63,6 +72,15 @@ Looks like we've triggered our first *error message*, `-e:1:in '<main>': undefin
 Error messages are your friend. Please read the error message! Seriously, **read the error message**. They will often provide context clues like line numbers and even suggest changes to make it work.
 
 <!-- TODO: add screenshot/video showing shortcut to click to the location in your code -->
+
+- In Ruby, what does a `NameError` usually mean?
+- You used a name (variable or method) that hasn’t been defined.
+  - Correct! Ruby couldn't find that name in the current scope.
+- You tried to divide by zero.
+  - Not correct — that would cause a ZeroDivisionError.
+- Your file is missing the `end` keyword.
+  - Not correct — that would cause a SyntaxError.
+{: .choose_best #nameerror title="Understanding NameError" answer="1"}
 
 ## 4. Code Comments
 
@@ -153,6 +171,15 @@ pp "text".class
 
 You'll use these data types to store and manipulate different kinds of information. We'll cover these data types in more detail in future lessons.
 
+- Which of these is a Boolean value in Ruby?
+- "true"
+  - Not quite — that’s a String, not a Boolean.
+- true
+  - Correct! Booleans are lowercase `true` or `false`.
+- :true
+  - Not correct — that’s a Symbol.
+{: .choose_best #boolean_values title="Boolean Values" answer="2"}
+
 ## 6. Everything is an Object
 
 In Ruby, *everything is an object*.
@@ -194,8 +221,6 @@ In Ruby we can write a blueprint for a cat using a *class*. We'll use that class
 
 ```ruby
 class Cat
-  attr_accessor :name, :color
-
   def initialize(name, color)
     @name = name
     @color = color
@@ -204,19 +229,14 @@ class Cat
   def meow
     puts "#{@name} says Meow!"
   end
-
-  def purr
-    puts "#{@name} is purring..."
-  end
 end
 
 my_cat = Cat.new("Turkey", "ginger")
 my_cat.meow
-my_cat.purr
 ```
 {: .repl }
 
-`my_cat` is an instance of `Cat` (a cat object). We can call the methods `meow` and `purr` on the cat object.
+`my_cat` is an instance of `Cat` (a cat object). We can call the method `meow` on the cat object.
 
 In Ruby, things like numbers and words are all objects with their own actions (called methods) and attributes.
 
@@ -246,7 +266,53 @@ In this example, `5` is an instance of the `Integer` class. Try calling the meth
   Don't worry about memorizing all the methods. You'll start to pick up common methods as you practice more. As a pro tip, you can call <code>.methods</code> on any Ruby object to get a list of all the methods available. You can also call <code>.respond_to?</code> to see if a specific method exists on an object.
 </aside>
 
-### The "Main Object" and `self`
+- What will `"ruby".upcase` output?
+- "ruby"
+  - Not correct — `upcase` changes all letters to uppercase.
+- "RUBY"
+  - Correct! `upcase` returns an uppercase version of the string.
+- :RUBY
+  - Not correct — that would be a Symbol, not a String.
+{: .choose_best #string_methods title="String Methods" answer="2"}
+
+## 7. The end Keyword
+
+Ruby uses the `end` keyword to close blocks of code like methods, classes, conditionals, and loops. If you forget an `end`, Ruby will throw a `SyntaxError`.
+
+### Example: Correct Use of end ✅
+
+```ruby
+def greet
+  puts "Hello!"
+end
+```
+{: .repl }
+
+### Example: Missing end ❌
+
+```ruby
+def greet
+  puts "Hello!"
+# No 'end' here
+```
+{: .repl }
+
+This will output `syntax error, unexpected end-of-input, expecting end`.
+
+<aside class="warning">
+   Every <code>def</code>, <code>class</code>, <code>if</code>, or <code>do</code> must have a matching <code>end</code>.
+</aside>
+
+- What happens if you forget to close a method definition with `end` in Ruby?
+- Ruby will try to guess the missing code.
+  - Not correct — Ruby will not guess, it will stop with an error.
+- Ruby will throw a `SyntaxError`.
+  - Correct! Missing `end` causes a syntax error.
+- Ruby will skip the method entirely.
+  - Not correct — the code will not run past the error.
+{: .choose_best #missing_end title="Forgetting end" answer="2"}
+
+## 8. The "Main Object" and `self`
 
 <!-- TODO: add diagrams, this is confusing for beginners -->
 
@@ -274,7 +340,7 @@ You'll learn more about `self` later, but for now just know:
 - If you don't write a receiver, Ruby uses `self` automatically.
 - Inside the top level of your program, `self` is the `main` object.
 
-## 7. Understanding the Syntax
+## 9. Understanding the Syntax
 
 ![object oriented syntax breakdown](assets/oop-syntax-breakdown.png)
 
@@ -284,11 +350,11 @@ Let's break down what's happening when we run `pp("hello, world")`:
 - `self` is the *receiver* of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
 - `"hello, world"` is a string, your method's *argument*.
 
-## Parentheses: Optional but Helpful
+## 10. Parentheses: Optional but Helpful
 
 In Ruby, parentheses are optional. For example, `pp "hello"` is the same as `pp("hello")`.
 
-## Casing Rules in Ruby
+## 11. Casing Rules in Ruby
 
 Ruby cares about letter casing. Things like methods, variables, classes and even file names should not have any empty spaces. Some casing you should recognize include:
 
@@ -308,7 +374,62 @@ Constants are typically defined using all capital letters and underscores `_` fo
 
 In general, recognize and follow established casing patterns and try to be consistent with casing in your code and filenames. This will make your code more readable and less prone to bugs 🐛.
 
-## 8. How to run Ruby
+- Which is a valid Ruby variable name?
+- myName
+  - Not quite — Ruby prefers snake_case for variables.
+- my_name
+  - Correct! Snake case is conventional for variables.
+- MyName
+  - Not quite — This is used for class names in Ruby.
+{: .choose_best #var_names title="Ruby Variable Names" answer="2"}
+
+## 12. Indentation
+
+Ruby does not require indentation to run code, but proper indentation makes your code much easier to read. Most Ruby developers follow the Ruby Style Guide:
+
+- Use two spaces for each indentation level (not tabs).
+- Indent consistently inside methods, classes, and loops.
+
+### Well-Indented Code ✅
+
+```ruby
+class Greeter
+  def greet(name)
+    puts "Hello, #{name}!"
+  end
+end
+```
+{: .repl }
+
+Notice how easy it is to see the nesting.
+
+### Poor Indentation ❌
+
+```ruby
+class Greeter
+def greet(name)
+puts "Hello, #{name}!"
+end
+end
+```
+{: .repl }
+
+This works but is hard to read.
+
+<aside class="tip">
+  Many editors will automatically indent for you. In VSCode, pressing <kbd>Tab</kbd> in a Ruby file will insert two spaces.
+</aside>
+
+- How many spaces should you use for indentation in Ruby?
+- 4 spaces
+  - Not quite — 4 spaces is common in other languages, but not in Ruby.
+- 2 spaces
+  - Correct! Ruby convention is two spaces per level.
+- Tabs
+  - Not correct — Ruby convention is to use spaces, not tabs.
+{: .choose_best #indentation_spaces title="Ruby Indentation" answer="2"}
+
+## 13. How to run Ruby
 
 There are two main ways to run Ruby code:
 
@@ -324,38 +445,39 @@ Open an interactive Ruby console by running the terminal command `irb`. IRB is g
 
 <video src="assets/irb.mp4" autoplay loop muted playsinline></video>
 
-## 9. Reading Documentation
+- Which command starts an interactive Ruby session?
+- ruby
+  - Not quite — `ruby` runs a file, not an interactive session.
+- irb
+  - Correct! `irb` opens an interactive Ruby console.
+- run_ruby
+  - Not correct — that’s not a Ruby command.
+{: .choose_best #run_ruby title="Running Ruby Interactively" answer="2"}
+
+## 14. Reading Documentation
 
 Ruby's official documentation is a treasure trove of information. I encourage you to bookmark these links.
 
 - [Ruby Docs](https://docs.ruby-lang.org/)
 - [Ruby.org Guides](https://www.ruby-lang.org/en/documentation/)
 
-## Practice Challenge
-
-Change your greeting so it includes your name, like: `"hello, Ian!"`. Then, try printing it with both `puts` and `pp`.
-
 ## Wrap-Up
 
-- You learned to print text, store it in variables, and identify Ruby's basic data types.
-- Next, you'll explore the basic data types and control flow to make programs interactive.
-- Bookmark the Ruby docs. you'll visit them often.
+In this lesson, you learned:
 
-## Quiz
-
-- What does `pp` do in Ruby? <a href="https://docs.ruby-lang.org/en/master/PP.html">Ruby Docs: class PP</a>
-- It pauses the program.
-  - Not correct. `pp` prints data in a human-readable format.
-- It prints output in a more readable way.
-  - Correct! `pp` pretty-prints objects.
-- It permanently stores variables.
-  - Not correct. `pp` has nothing to do with saving data.
-{: .choose_best #ruby_pp title="Understanding pp" answer="2"}
+- How to print text to the console using `puts`, `print`, `p`, and `pp`.
+- How to store values in variables and follow Ruby naming conventions.
+- How to read and understand error messages like `NameError`.
+- How to use comments to document your code.
+- Ruby’s common data types and how to check them with `.class`.
+- That *everything is an object* in Ruby and can have attributes and methods.
+- The importance of the `end` keyword for closing methods, classes, and other blocks.
+- How indentation makes your code easier to read (and the convention of two spaces).
+- The basics of Ruby syntax, parentheses rules, and casing styles.
+- Two ways to run Ruby code: in a file with ruby and interactively with irb.
+- Where to find and read Ruby documentation.
 
 ## References
 
 - [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
 - [Ruby Programming Language Documentation](https://docs.ruby-lang.org/)
-
-<!-- TODO: add note on indenting code -->
-<!-- TODO: add note on `end`? -->
