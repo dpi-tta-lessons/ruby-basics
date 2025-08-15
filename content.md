@@ -202,7 +202,7 @@ class Cat
   end
 
   def meow
-    puts "#{@name} says: Meow!"
+    puts "#{@name} says Meow!"
   end
 
   def purr
