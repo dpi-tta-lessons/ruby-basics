@@ -79,6 +79,7 @@ I encourage you to use comments to document your code and provide context.
 <!-- TODO: add video/screenshot -->
 <aside class="tip">
   On many editors (including VSCode), <pre>⌘ + /</pre> toggles comments.
+  <video src="assets/toggle-comment.mp4" width="480" autoplay loop muted playsinline></video>
 </aside>
 
 ## 5. Data Types
