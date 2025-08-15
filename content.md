@@ -312,15 +312,17 @@ In general, recognize and follow established casing patterns and try to be consi
 
 There are two main ways to run Ruby code:
 
-<!-- TODO: video example -->
 ### Run a Ruby File
 
 Save your code in a file and run `ruby my_file.rb`.
 
-<!-- TODO: video example -->
+<video src="assets/run-ruby-file.mp4" autoplay loop muted playsinline></video>
+
 ### Interactive Ruby
 
 Open an interactive Ruby console by running the terminal command `irb`. IRB is great for quick experiments.
+
+<video src="assets/irb.mp4" autoplay loop muted playsinline></video>
 
 ## 9. Reading Documentation
 
