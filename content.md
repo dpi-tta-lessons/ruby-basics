@@ -320,7 +320,7 @@ Save your code in a file and run `ruby my_file.rb`.
 
 ### Interactive Ruby
 
-Open an interactive Ruby console by running the terminal command `irb`. IRB is great for quick experiments.
+Open an interactive Ruby console by running the terminal command `irb`. IRB is great for quick experiments. Enter `exit` to close an `irb` session.
 
 <video src="assets/irb.mp4" autoplay loop muted playsinline></video>
 
