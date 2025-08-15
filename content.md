@@ -177,7 +177,7 @@ There are many other cats like him, but he is *my* pet cat.
 There are characteristics that all cats share. All cats:
 
 - have a name
-- have a birthday
+- have a age
 - have a fur color
 - have a unique personality
 - can meow
@@ -186,7 +186,7 @@ There are characteristics that all cats share. All cats:
 Each cat has their own unique values for these characteristics:
 
 - name: "Turkey"
-- birthday: 2016
+- age: 10 years
 - fur color: Ginger
 - personality: "Likes to wake up early and go outside. Very vocal"
 
