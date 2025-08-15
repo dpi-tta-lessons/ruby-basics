@@ -232,7 +232,7 @@ In this example:
 
 Resulting in `"desserts"`
 
-Even numbers are objects.
+Numbers are also objects.
 
 ```ruby
 pp(5.next)  # tells the number 5 to give you the next number
