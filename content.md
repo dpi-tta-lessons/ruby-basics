@@ -131,16 +131,16 @@ pp 1.1   # Float
 An immutable, reusable name or identifier, often used as a lightweight alternative to strings.
 
 ```ruby
-pp :symbol
+pp :my_symbol
 ```
 {: .repl }
 
 ### Boolean
 
-Represents a logical value — either true or false.
+Represents a logical value (true or false).
 
 ```ruby
-pp true  # and false
+pp true
 ```
 {: .repl }
 
@@ -232,7 +232,7 @@ Each cat has their own unique values for these characteristics:
 - name: "Turkey"
 - age: 10 years
 - fur color: Ginger
-- personality: "Likes to wake up early and go outside. Very vocal"
+- personality: "Likes to wake up early and go outside. Very playful and talkative."
 
 In Ruby we can write a blueprint for a cat using a *class*. We'll use that class to create a cat object (an *instance* of `Cat` class).
 
@@ -364,7 +364,7 @@ You'll learn more about `self` later, but for now just know:
 Let's break down what's happening when we run `pp("hello, world")`:
 
 - `pp` is a *method* (a *message* you send to an object).
-- `self` is the *receiver* object of the `pp` *message*. (You could even write it as `self.pp("hello, world")`)
+- `self` is the *receiver* object of the `pp` *message*. (You could also write it as `self.pp("hello, world")`)
 - `"hello, world"` is a string, your method's *argument*.
 
 ## 10. Parentheses: Optional but Helpful
