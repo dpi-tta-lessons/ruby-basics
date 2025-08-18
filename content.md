@@ -494,6 +494,10 @@ In this lesson, you learned:
 - Two ways to run Ruby code: in a file with ruby and interactively with irb.
 - Where to find and read Ruby documentation.
 
+## Project: Hello, world
+
+In this project, you will write a Ruby program that prints "hello, world" to the console. This project includes automated tests, so click this link to get started: <https://github.com/dpi-tta-projects/ruby-basics/fork>. Then fork the repository and create a codespace.
+
 ## References
 
 - [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
