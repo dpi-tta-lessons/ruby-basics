@@ -498,6 +498,10 @@ In this lesson, you learned:
 
 In this project, you will write a Ruby program that prints "hello, world" to the console. This project includes automated tests, so click this link to get started <https://github.com/dpi-tta-projects/ruby-basics/fork>, fork the repository and create a codespace.
 
+<aside class="warning">
+  In order to get credit for completing this project you'll need to open the assignment link from canvas to generate an access token.
+</aside>
+
 ## References
 
 - [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
