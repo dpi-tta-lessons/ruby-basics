@@ -496,7 +496,7 @@ In this lesson, you learned:
 
 ## Project: Hello, world
 
-In this project, you will write a Ruby program that prints "hello, world" to the console. This project includes automated tests, so click this link to get started: <https://github.com/dpi-tta-projects/ruby-basics/fork>. Then fork the repository and create a codespace.
+In this project, you will write a Ruby program that prints "hello, world" to the console. This project includes automated tests, so click this link to get started <https://github.com/dpi-tta-projects/ruby-basics/fork>, fork the repository and create a codespace.
 
 ## References
 
