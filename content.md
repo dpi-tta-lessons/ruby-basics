@@ -478,6 +478,8 @@ Ruby's official documentation is a treasure trove of information. I encourage yo
 - [Ruby Docs](https://docs.ruby-lang.org/)
 - [Ruby.org Guides](https://www.ruby-lang.org/en/documentation/)
 
+We'll be referencing the official Ruby documentation throughout this course: <https://ruby-doc.org/>. Make sure you are referencing the correct version by running `ruby -v` in the terminal to check the version you are running.
+
 ## Wrap-Up
 
 In this lesson, you learned:
